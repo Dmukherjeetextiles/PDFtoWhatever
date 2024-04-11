@@ -1,6 +1,6 @@
 # PDFtoWhatever
 
-A simple streamlit application to convert pdf to image or docx and vice versa
+
 This is a Streamlit multipage app for converting various file formats. It provides the following functionalities:
 
 1. PDF to Image
