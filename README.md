@@ -1,6 +1,6 @@
 # PDFtoWhatever
 
-
+https://pdftowhatever.streamlit.app/
 This is a Streamlit multipage app for converting various file formats. It provides the following functionalities:
 
 1. PDF to Image
@@ -17,7 +17,7 @@ For single files, such as PDF to DOC or DOC to PDF, the output is handled as usu
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/file-converter-app.git
+    git clone https://github.com/Dmukherjeetextiles/PDFtoWhatever.git
     ```
 
 2. Navigate to the project directory:
@@ -37,7 +37,7 @@ For single files, such as PDF to DOC or DOC to PDF, the output is handled as usu
 1. Run the Streamlit app:
 
     ```bash
-    streamlit run app.py
+    streamlit run streamlit_app.py
     ```
 
 2. Open the provided URL in your web browser.
