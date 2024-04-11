@@ -48,10 +48,10 @@ For single files, such as PDF to DOC or DOC to PDF, the output is handled as usu
 
 ## File Structure
 
-- `app.py`: The main Streamlit application script containing the app logic.
+- `streamlit_app.py`: The main Streamlit application script containing the app logic.
 - `requirements.txt`: A list of Python dependencies required to run the app.
 - `README.md`: This file providing information about the app.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/Dmukherjeetextiles/PDFtoWhatever/license) file for details.
