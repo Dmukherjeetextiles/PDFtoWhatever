@@ -1,6 +1,8 @@
 # PDFtoWhatever
 
 https://pdftowhatever.streamlit.app/
+
+
 This is a Streamlit multipage app for converting various file formats. It provides the following functionalities:
 
 1. PDF to Image
@@ -54,4 +56,4 @@ For single files, such as PDF to DOC or DOC to PDF, the output is handled as usu
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/Dmukherjeetextiles/PDFtoWhatever/license) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/Dmukherjeetextiles/PDFtoWhatever/blob/main/LICENSE) file for details.
