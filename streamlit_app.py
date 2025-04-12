@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 import tempfile
-from PyPDF2 import PdfFileReader
+from PyPDF2 import PdfReader, PdfWriter
 from pdf2image import convert_from_path
 from PIL import Image
 import zipfile
@@ -25,7 +25,7 @@ def images_to_pdf(image_files):
 
 # Function to convert PDF to DOC
 def pdf_to_doc(pdf_file):
-    pdf_reader = PdfFileReader(pdf_file)
+    pdf_reader = PdfReader(pdf_file)
     doc = Document()
     for page_num in range(pdf_reader.numPages):
         page = pdf_reader.getPage(page_num)
@@ -45,9 +45,9 @@ def doc_to_pdf(doc_file):
 # Function to split PDF
 def split_pdf(pdf_file):
     with open(pdf_file, 'rb') as f:
-        pdf_reader = PdfFileReader(f)
+        pdf_reader = PdfReader(f)
         for page_num in range(pdf_reader.numPages):
-            pdf_writer = PdfFileWriter()
+            pdf_writer = PdfWriter()
             pdf_writer.addPage(pdf_reader.getPage(page_num))
             output_filename = f"{os.path.splitext(pdf_file)[0]}_page_{page_num+1}.pdf"
             with open(output_filename, 'wb') as output_file:
@@ -56,10 +56,10 @@ def split_pdf(pdf_file):
 
 # Function to merge PDF
 def merge_pdf(pdf_files):
-    merged_pdf = PdfFileWriter()
+    merged_pdf = PdfWriter()
     for pdf_file in pdf_files:
         with open(pdf_file, 'rb') as f:
-            pdf_reader = PdfFileReader(f)
+            pdf_reader = PdfReader(f)
             for page_num in range(pdf_reader.numPages):
                 merged_pdf.addPage(pdf_reader.getPage(page_num))
     temp_file = tempfile.NamedTemporaryFile(delete=False, suffix='.pdf')
@@ -132,7 +132,7 @@ def main():
             split_pdf(pdf_file)
             st.write("PDF splitting complete!")
             if st.button("Download Split PDFs as ZIP"):
-                files = [f"{os.path.splitext(pdf_file.name)[0]}_page_{i+1}.pdf" for i in range(PdfFileReader(pdf_file).numPages)]
+                files = [f"{os.path.splitext(pdf_file.name)[0]}_page_{i+1}.pdf" for i in range(PdfReader(pdf_file).numPages)]
                 zip_file = create_zip(files)
                 st.download_button(label="Download ZIP", data=zip_file, file_name="split_pdfs.zip")
 
